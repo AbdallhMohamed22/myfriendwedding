@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abanoub & Madona wedding countdown</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="overlay">
+        <h1>Count Down ❤️</h1>
+        <div id="countdown">
+            <div><span id="days"></span> Day</div>
+            <div><span id="hours"></span> Hour</div>
+            <div><span id="minutes"></span> Minutes</div>
+            <div><span id="seconds"></span> Seconds</div>
+        </div>
+    </div>
+
+    <script>
+        // التاريخ المستهدف
+        const weddingDate = new Date("Sep 7, 2025 18:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "WE MADE IT !! 🎉";
+            }
+        }, 1000);
+    </script>
+<script>
+document.addEventListener('click', function(e) {
+    const heart = document.createElement('span');
+    heart.innerHTML = '❤️';
+    heart.classList.add('floating-heart');
+    document.body.appendChild(heart);
+
+    // تحديد مكان اللمسة أو الكليك
+    heart.style.left = e.pageX + 'px';
+    heart.style.top = e.pageY + 'px';
+
+    // بعد 1.5 ثانية نشيله
+    setTimeout(() => {
+        heart.remove();
+    }, 1500);
+});
+</script>
+
+
+
+<script>
+/* ======= Audio segment player with fade in/out (plays once on first user interaction) ======= */
+
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const gainNode = audioContext.createGain();
+gainNode.connect(audioContext.destination);
+
+let audioBuffer = null;
+
+// تقدر تعدل القيم دي
+const START_SECOND = 63;   // يبدأ من 1:03 => 63 ثانية
+const END_SECOND   = 144;  // ينتهي عند 2:24 => 144 ثانية
+const FADE_SECONDS = 2;    // مدة الفيد إن/أوت بالثواني
+
+// تحميل الملف (تأكد ان song1.m4a في نفس الفولدر)
+fetch('song1.m4a')
+  .then(resp => {
+    if (!resp.ok) throw new Error('Failed to load audio file');
+    return resp.arrayBuffer();
+  })
+  .then(buf => audioContext.decodeAudioData(buf))
+  .then(decoded => {
+    audioBuffer = decoded;
+    console.log('Audio loaded. duration:', audioBuffer.duration, 'seconds');
+  })
+  .catch(err => console.error('Audio load error:', err));
+
+function playSegmentOnce() {
+  if (!audioBuffer) {
+    console.warn('Audio not loaded yet.');
+    return;
+  }
+
+  // Resume audio context if suspended (required on some browsers)
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+
+  // ضبط نقاط البداية والنهاية داخل طول الملف فعليًا
+  const s = Math.max(0, START_SECOND);
+  const e = Math.min(END_SECOND, audioBuffer.duration);
+  const duration = e - s;
+  if (duration <= 0) {
+    console.error('Invalid start/end times. duration <= 0');
+    return;
+  }
+
+  const source = audioContext.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect(gainNode);
+
+  // إلغاء أي جداول سابقة على الـ gain
+  gainNode.gain.cancelScheduledValues(audioContext.currentTime);
+  // بداية بصوت 0
+  gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+  // Fade in
+  gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + FADE_SECONDS);
+  // تحضير fade out قبل نهاية المقطع
+  const fadeOutStart = audioContext.currentTime + Math.max(0, duration - FADE_SECONDS);
+  gainNode.gain.setValueAtTime(1, fadeOutStart);
+  gainNode.gain.linearRampToValueAtTime(0, fadeOutStart + FADE_SECONDS + 0.05);
+
+  // تشغيل المصدر من offset = s لمدة = duration
+  source.start(audioContext.currentTime, s, duration);
+  // نوقف المصدر بعد شوية للتأكد من التنظيف
+  source.stop(audioContext.currentTime + duration + 0.1);
+
+  console.log(`Playing segment ${s}s → ${e}s (duration ${duration}s)`);
+
+  // نشيل الListeners علشان يتشغل مرة واحدة
+  document.removeEventListener('click', onFirstInteraction);
+  document.removeEventListener('touchstart', onFirstInteraction);
+}
+
+function onFirstInteraction(e) {
+  // إذا حابب، ممكن تمنع الـ default عشان لا يحصل scroll قبل التشغيل:
+  // e.preventDefault();
+  playSegmentOnce();
+}
+
+// شغّال على click و touchstart (mobile) مرة واحدة
+document.addEventListener('click', onFirstInteraction, { once: true });
+document.addEventListener('touchstart', onFirstInteraction, { once: true });
+</script>
+
+
+
+
+<script>
+
+const audio = new Audio('song1.m4a');
+
+document.addEventListener('click', () => {
+    audio.play();
+});
+
+document.addEventListener('touchstart', () => {
+    audio.play();
+});
+
+</script>
+
+</body>
+</html>

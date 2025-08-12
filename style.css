@@ -62,7 +62,7 @@ h1 {
         min-width: 80px;
     }
     body {
-	background-position: -190px center;
+	/*background-position: -190px center;*/
 	}
 }
 .overlay {
@@ -139,6 +139,7 @@ h1, #countdown div {
         opacity: 0;
     }
 }
+
 
 
 

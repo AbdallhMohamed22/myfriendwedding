@@ -61,9 +61,6 @@ h1 {
         padding: 10px 15px;
         min-width: 80px;
     }
-    body {
-	/*background-position: -190px center;*/
-	}
 }
 .overlay {
     animation: fadeIn 1.5s ease-in-out;
@@ -139,6 +136,7 @@ h1, #countdown div {
         opacity: 0;
     }
 }
+
 
 
 

@@ -6,7 +6,7 @@
 
 body {
     font-family: "Cairo", sans-serif;
-    background: url('your-image.jpg') no-repeat left center;
+    background: url('your-image.jpg') no-repeat right center;
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -138,4 +138,5 @@ h1, #countdown div {
         opacity: 0;
     }
 }
+
 

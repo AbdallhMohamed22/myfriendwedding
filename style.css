@@ -192,6 +192,33 @@ h1, #countdown div {
 
 
 
+.save-date {
+  font-family: 'Brush Script MT', cursive; /* خط هاندرايتينج شيك */
+  font-size: 48px;
+  color: #c48b9f; /* لون وردي هادي */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.save-date-date {
+  font-size: 32px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* للموبايل */
+@media (max-width: 600px) {
+  .save-date {
+    font-size: 32px;
+    color: #c48b9f;
+  }
+
+  .save-date-date {
+    font-size: 24px;
+  }
+}
+
 
 
 

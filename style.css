@@ -139,6 +139,58 @@ h1, #countdown div {
 
 
 
+/* Save the Date block */
+.save-date{
+  text-align:center;
+  margin-bottom: 28px;
+  animation: sd-fade 0.9s ease-out both;
+}
+
+.save-date__title{
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(40px, 8vw, 90px);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  position: relative;
+}
+
+/* لمسة تحتية لطيفة */
+.save-date__title::after{
+  content:"";
+  display:block;
+  width: 82%;
+  max-width: 360px;
+  height: 2px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  border-radius: 999px;
+}
+
+.save-date__date{
+  margin-top: 10px;
+  font-size: clamp(18px, 3.8vw, 34px);
+  color:#fff;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* ظهور ناعم */
+@keyframes sd-fade{
+  from{ opacity:0; transform: translateY(12px); }
+  to{   opacity:1; transform: translateY(0); }
+}
+
+/* تحسين القراءة على الموبايل */
+@media (max-width: 480px){
+  .save-date{ margin-bottom: 20px; }
+  .save-date__title::after{ width: 70%; }
+}
+
+
+
 
 
 

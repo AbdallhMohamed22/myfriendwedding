@@ -39,7 +39,10 @@ h1 {
 }
 
 .bono {
-      font-family: 'Great Vibes', cursive;
+      font-family: "Edu NSW ACT Cursive", cursive;
+ 	 font-optical-sizing: auto;
+  	font-weight: 400;
+ 	 font-style: normal;
       font-size: 2rem;
 
 }
@@ -234,6 +237,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

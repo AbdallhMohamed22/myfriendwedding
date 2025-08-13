@@ -32,14 +32,14 @@ h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: white;
-    font-family: "Edu NSW ACT Cursive", cursive;
+    font-family: Courgette;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
 }
 
 .bono {
-      font-family: "Edu NSW ACT Cursive", cursive;
+      font-family: Courgette;
  	 font-optical-sizing: auto;
   	font-weight: 400;
  	 font-style: normal;
@@ -237,6 +237,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

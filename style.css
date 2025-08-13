@@ -43,7 +43,7 @@ h1 {
  	 font-optical-sizing: auto;
   	font-weight: 700;
  	 font-style: normal;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
 
 }
 #countdown {
@@ -237,6 +237,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

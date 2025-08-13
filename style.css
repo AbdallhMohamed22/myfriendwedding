@@ -29,11 +29,20 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: white;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
+.bono {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+
+}
 #countdown {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +62,8 @@ h1 {
 /* للموبايل */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        color: #e9d3d9;
     }
 
     #countdown div {
@@ -147,13 +157,12 @@ h1, #countdown div {
 }
 
 .save-date__title{
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(40px, 8vw, 90px);
-  line-height: 1;
+  font-family: 'Great Vibes', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   color: #e92779;
-  letter-spacing: 1px;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  position: relative;
+  
 }
 
 /* لمسة تحتية لطيفة */
@@ -193,16 +202,17 @@ h1, #countdown div {
 
 
 .save-date {
-  font-family: 'Brush Script MT', cursive; /* خط هاندرايتينج شيك */
-  font-size: 48px;
+  font-family: 'Great Vibes', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   color: #e92779; /* لون وردي هادي */
-  text-align: center;
-  margin-top: 20px;
+  
 }
 
 .save-date-date {
   font-size: 32px;
-  color: #e92779;
+  color: #e9d3d9;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -210,12 +220,12 @@ h1, #countdown div {
 /* للموبايل */
 @media (max-width: 600px) {
   .save-date {
-    font-size: 32px;
-    color: #e92779;
+    font-size: 50px;
+    color: #e9d3d9;
   }
 
   .save-date-date {
-    font-size: 24px;
+    font-size: 40px;
   }
 }
 

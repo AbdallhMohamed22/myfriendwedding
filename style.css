@@ -152,7 +152,7 @@ h1, #countdown div {
 /* Save the Date block */
 .save-date{
   text-align:center;
-  margin-bottom: 28px;
+  margin-bottom: 5px;
   animation: sd-fade 0.9s ease-out both;
 }
 
@@ -234,6 +234,7 @@ h1, #countdown div {
     padding-top: 50vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

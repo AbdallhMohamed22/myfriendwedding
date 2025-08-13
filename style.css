@@ -24,7 +24,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding-right: 20px;
+	padding-left: 20px;
     text-align: center;
 	  height: 100vh;
 }
@@ -239,6 +240,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

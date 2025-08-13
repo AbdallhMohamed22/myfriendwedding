@@ -34,16 +34,16 @@ h1 {
     color: white;
     font-family: Courgette;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
 }
 
 .bono {
       font-family: Courgette;
  	 font-optical-sizing: auto;
-  	font-weight: 400;
+  	font-weight: 700;
  	 font-style: normal;
-      font-size: 2rem;
+      font-size: 1.6rem;
 
 }
 #countdown {
@@ -237,6 +237,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

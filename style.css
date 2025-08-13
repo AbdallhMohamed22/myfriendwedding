@@ -231,9 +231,10 @@ h1, #countdown div {
 
 @media (max-width: 768px) {
   .overlay {
-    padding-top: 50vh; /* يبدأ من نص الشاشة */
+    padding-top: 45vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

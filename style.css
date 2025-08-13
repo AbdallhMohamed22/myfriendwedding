@@ -113,6 +113,7 @@ h1, #countdown div {
     font-size: 1rem;
     min-width: 100px;
     box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+	width:43%
 }
 
 #countdown div:nth-child(1) { animation-delay: 0.2s; }
@@ -237,6 +238,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

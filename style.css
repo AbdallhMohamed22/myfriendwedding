@@ -26,6 +26,7 @@ body {
     align-items: center;
     padding: 20px;
     text-align: center;
+	  height: 100vh;
 }
 
 h1 {
@@ -238,6 +239,7 @@ h1, #countdown div {
     padding-top: 40vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

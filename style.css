@@ -219,6 +219,12 @@ h1, #countdown div {
   }
 }
 
+@media (max-width: 768px) {
+  .text-container {
+    padding-top: 50vh; /* يبدأ من نص الشاشة */
+  }
+}
+
 
 
 

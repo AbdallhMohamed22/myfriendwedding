@@ -53,7 +53,7 @@ h1 {
     animation: fade-slide-in 1.8s ease-out;
     font-weight: 700;
     font-size: 32px;
-    padding: 40px 0 300px;
+    padding: 40px 0 235px;
 }
 .bono .wedd {
     color: #e92779;
@@ -263,6 +263,7 @@ h1, #countdown div {
     /*padding-top: 1vh; /* يبدأ من نص الشاشة */
   }
 }
+
 
 
 

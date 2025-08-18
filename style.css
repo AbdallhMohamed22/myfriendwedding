@@ -22,7 +22,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     padding-right: 20px;
 	padding-left: 20px;
@@ -41,13 +41,36 @@ h1 {
 }
 
 .bono {
-      font-family: Courgette;
- 	 font-optical-sizing: auto;
-  	font-weight: 700;
- 	 font-style: normal;
-      font-size: 1.4rem;
-
+    font-family: "lobster", cursive;/* خط هاند رايتينج أنيق */
+    font-size: clamp(32px, 6vw, 64px); /* حجم مرن */
+    color: #fff;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(233, 39, 121, 0.5), /* هالة وردية */
+        0 0 30px rgba(233, 39, 121, 0.3);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: fade-slide-in 1.8s ease-out;
+    font-weight: 700;
+    font-size: 32px;
+    padding: 40px 0 355px;
 }
+.bono .wedd {
+    color: #e92779;
+}
+
+/* أنيميشن دخول ناعم */
+@keyframes fade-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 #countdown {
     display: flex;
     flex-wrap: wrap;
@@ -237,10 +260,9 @@ h1, #countdown div {
 
 @media (max-width: 768px) {
   .overlay {
-    padding-top: 40vh; /* يبدأ من نص الشاشة */
+    /*padding-top: 1vh; /* يبدأ من نص الشاشة */
   }
 }
-
 
 
 
